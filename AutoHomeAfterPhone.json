@@ -1,0 +1,11 @@
+[
+{
+"name": "挂断电话返回主页",
+"description": "",
+"priority": 1,
+"condition": "if(su.exe(\"dumpsys telephony.registry | grep 'mCallState=2'\").code==0){Thread.sleep(1500);if(su.exe(\"dumpsys telephony.registry | grep 'mCallState=2'\").code==1){su.exe(\"am start -a android.intent.action.MAIN -c android.intent.category.HOME\")}}",
+"actions": [
+""
+]
+}
+]

@@ -1,0 +1,13 @@
+[
+{
+"name": "米窗保活",
+"description": "com.sunshine.freeform/com.sunshine.freeform.service.ForegroundService保活",
+"priority": 1,
+"condition": "pkgKilled == true && pkgName == \"com.sunshine.freeform\"",
+"actions":
+[
+"su.exe('am start-foreground-service -n com.sunshine.freeform/com.sunshine.freeform.service.ForegroundService');",
+"ui.showShortToast(\"KEEP com.sunshine.freeform/com.sunshine.freeform.service.ForegroundService\")"
+]
+}
+]

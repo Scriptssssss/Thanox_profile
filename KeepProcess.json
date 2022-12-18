@@ -1,0 +1,12 @@
+[
+{
+"name": "KEEP Process",
+"description": "应用进程保活，全局变量keepApps",
+"priority": 10,
+"condition": "pkgKilled && globalVarOf$keepApps.contains(pkgName)",
+"actions":
+[
+"ui.showShortToast(\"KEEP \"+pkgName);activity.launchProcessForPackage(pkgName);"
+]
+}
+]

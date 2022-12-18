@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Push message api",
+    "description": "感知GCM FCM推送",
+    "priority": 2,
+    "condition": "fcmPushMessageArrived == true && pkgName == \"com.tencent.mm\"",
+    "actions": [
+      "ui.showShortToast(\"Wechat 收到了推送\"));"
+    ]
+  }
+]

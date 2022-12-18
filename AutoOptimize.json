@@ -1,0 +1,11 @@
+[
+  {
+    "name": "AutoOptimize",
+    "description": "应用安装时，自动以everything模式优化",
+    "priority": 2,
+    "condition": "pkgUpdated == true || pkgAdded == true",
+    "actions": [
+      "ui.showShortToast(\"已安装\"+pkgName+\",正在执行优化:\" + su.exe(\"cmd package compile -m everything -f \"+pkgName));"
+    ]
+  }
+]

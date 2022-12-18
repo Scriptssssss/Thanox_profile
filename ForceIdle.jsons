@@ -1,0 +1,80 @@
+[
+  {
+    "name": "ForceIdle: continue App",
+    "description": "切回前台，取消压制",
+    "priority": 1,
+    "condition": "frontPkgChanged == true && globalVarOf$pause.contains(to)",
+    "actions": [
+    "su.exe(\"pgrep -f \"+ to+ \" | while read pid; do echo 0 > /sys/fs/cgroup/uid_\"+thanos.getPkgManager().getUidForPkgName(to)+\"/pid_$pid/cgroup.freeze; done\");",
+    "if(thanos.getActivityManager().isPkgSmartStandByEnabled(to)==true){thanos.getActivityManager().setPkgSmartStandByEnabled(to,false)};",
+    "thanos.getActivityManager().deleteStartRule(\"DENY * \"+to);",
+    "su.exe(\"appops set \" +to + \" RUN_ANY_IN_BACKGROUND default\");",
+    "su.exe(\"appops set \" +to + \" RUN_IN_BACKGROUND default\");",
+    "su.exe(\"appops set \" +to + \" WAKE_LOCK default\");",
+    "su.exe(\"appops set \" +to + \" BLUETOOTH_SCAN default\");",
+    "su.exe(\"appops set \" +to + \" BLUETOOTH_CONNECT default\");"
+    ]
+  }
+]
+
+[
+  {
+    "name": "ForceIdle: pause App",
+    "description": "切到后台，自动压制",
+    "priority": 1,
+    "condition": "frontPkgChanged == true && globalVarOf$pause.contains(from)",
+    "actions": [ 
+    "if(thanos.getActivityManager().isStartRuleEnabled==false){thanos.getActivityManager().setStartRuleEnabled(true)};",
+    "thanos.getActivityManager().addStartRule(\"DENY * \"+from)",
+    "su.exe(\"appops set \" +from + \" RUN_ANY_IN_BACKGROUND ignore\");",
+    "su.exe(\"appops set \" +from + \" RUN_IN_BACKGROUND ignore\");",
+    "su.exe(\"appops set \" +from + \" WAKE_LOCK ignore\");",
+    "su.exe(\"appops set \" +from + \" BLUETOOTH_SCAN deny\");",
+    "su.exe(\"appops set \" +from + \" BLUETOOTH_CONNECT deny\");",
+    "su.exe(\"am set-standby-bucket \" +from +\" restricted\");",
+    "if(activity.isInactive(from)==false){activity.setInactive(from)};",
+    "do{thanos.getActivityManager().idlePackage(from)}until(thanos.getActivityManager().isPackageIdle(from)==true || activity.getFrontAppPackage()==from);",
+    "actor.delayed(5000,\"if(activity.getFrontAppPackage()!=from){su.exe(\\\"pgrep -f \\\"+ from+ \\\" | while read pid; do echo 1 > /sys/fs/cgroup/uid_\\\"+thanos.getPkgManager().getUidForPkgName(from)+\\\"/pid_$pid/cgroup.freeze; done\\\")}\");"
+    ] 
+}]
+[
+  {
+    "name": "ForceIdle: pause App",
+    "description": "切到后台，自动压制",
+    "priority": 1,
+    "condition": "frontPkgChanged == true && globalVarOf$pause.contains(from)",
+    "actions": [ 
+    "if(thanos.getActivityManager().isStartRuleEnabled==false){thanos.getActivityManager().setStartRuleEnabled(true)};",
+    "thanos.getActivityManager().addStartRule(\"DENY * \"+from)",
+    "su.exe(\"appops set \" +from + \" RUN_ANY_IN_BACKGROUND ignore\");",
+    "su.exe(\"appops set \" +from + \" RUN_IN_BACKGROUND ignore\");",
+    "su.exe(\"appops set \" +from + \" WAKE_LOCK ignore\");",
+    "su.exe(\"appops set \" +from + \" BLUETOOTH_SCAN deny\");",
+    "su.exe(\"appops set \" +from + \" BLUETOOTH_CONNECT deny\");",
+    "su.exe(\"am set-standby-bucket \" +from +\" restricted\");",
+    "if(activity.isInactive(from)==false){activity.setInactive(from)};",
+    "do{thanos.getActivityManager().idlePackage(from)}until(thanos.getActivityManager().isPackageIdle(from)==true || activity.getFrontAppPackage()==from);",
+    "actor.delayed(5000,\"if(activity.getFrontAppPackage()!=from){su.exe(\\\"pgrep -f \\\"+ from+ \\\" | while read pid; do echo 1 > /sys/fs/cgroup/uid_\\\"+thanos.getPkgManager().getUidForPkgName(from)+\\\"/pid_$pid/cgroup.freeze; done\\\")}\");"
+    ] 
+}]
+[
+  {
+    "name": "ForceIdle: pause App",
+    "description": "切到后台，自动压制",
+    "priority": 1,
+    "condition": "frontPkgChanged == true && globalVarOf$pause.contains(from)",
+    "actions": [ 
+    "if(thanos.getActivityManager().isStartRuleEnabled==false){thanos.getActivityManager().setStartRuleEnabled(true)};",
+    "thanos.getActivityManager().addStartRule(\"DENY * \"+from)",
+    "su.exe(\"appops set \" +from + \" RUN_ANY_IN_BACKGROUND ignore\");",
+    "su.exe(\"appops set \" +from + \" RUN_IN_BACKGROUND ignore\");",
+    "su.exe(\"appops set \" +from + \" WAKE_LOCK ignore\");",
+    "su.exe(\"appops set \" +from + \" BLUETOOTH_SCAN deny\");",
+    "su.exe(\"appops set \" +from + \" BLUETOOTH_CONNECT deny\");",
+    "su.exe(\"am set-standby-bucket \" +from +\" restricted\");",
+    "if(activity.isInactive(from)==false){activity.setInactive(from)};",
+    "do{thanos.getActivityManager().idlePackage(from)}until(thanos.getActivityManager().isPackageIdle(from)==true || activity.getFrontAppPackage()==from);",
+    "actor.delayed(5000,\"if(activity.getFrontAppPackage()!=from){su.exe(\\\"pgrep -f \\\"+ from+ \\\" | while read pid; do echo 1 > /sys/fs/cgroup/uid_\\\"+thanos.getPkgManager().getUidForPkgName(from)+\\\"/pid_$pid/cgroup.freeze; done\\\")}\");"
+    ] 
+}]
+

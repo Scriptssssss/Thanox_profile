@@ -1,0 +1,11 @@
+[
+{
+"name": "自动开关clash",
+"description": "打开需要软件时开启clash，杀软件后关闭By OCT310",
+"priority": 1,
+"condition": "if (frontPkgChanged == true && globalVarOf$clash.contains(to)) {ui.showShortToast(\"Clash开启🏄\");su.exe(\"am start-service -n com.github.kr328.clash/.service.TunService\");} else if (pkgKilled == true && globalVarOf$clash.contains(pkgName)) { ui.showShortToast(\"Clash关闭🙅\");su.exe(\"am force-stop com.github.kr328.clash\")}",
+"actions":[
+""
+]
+}
+]

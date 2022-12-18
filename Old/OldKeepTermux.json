@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Start Termux process",
+    "description": "Termux被杀死时，启动Termux进程",
+    "priority": 1,
+    "condition": "pkgKilled == true && pkgName == \"com.termux\"",
+    "actions": [
+      "ui.showShortToast(\"启动Termux...\");",
+      "activity.launchProcessForPackage(\"com.termux\")"
+    ]
+  }
+]

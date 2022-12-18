@@ -1,0 +1,22 @@
+[
+  {
+    "name": "IME switch",
+    "description": "打开Terminal时，切换到hack'skeyboard",
+    "priority": 2,
+    "condition": "frontPkgChanged == true && globalVarOf$Terminals.contains(to)",
+    "actions": [
+      "ui.showShortToast(\"检测到进入Terminal 执行:切换输入法\");",
+      "ui.showShortToast(\"\" + su.exe(\"ime set org.pocketworkstation.pckeyboard/.LatinIME\"));"
+    ]
+  },
+  {
+    "name": "IME switch 2",
+    "description": "Terminal回到后台，切换回百度输入法",
+    "priority": 2,
+    "condition": "frontPkgChanged == true && globalVarOf$Terminals.contains(from)",
+    "actions": [
+      "ui.showShortToast(\"检测到退出Terminal 执行:切换输入法\");",
+      "ui.showShortToast(\"\" + su.exe(\"ime set com.baidu.input_heisha/.ImeService\"));"
+    ]
+  }
+]

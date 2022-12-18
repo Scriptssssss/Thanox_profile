@@ -1,0 +1,27 @@
+[
+    {
+        "name": "冻结进程",
+        "description": "当应用进入后台时冻结进程",
+        "priority": 1,
+        "condition": "frontPkgChanged && globalVarOf$blackApps.contains(from)",
+        "actions": [
+            "su.exe(\"appops set \" +from + \" WAKE_LOCK ignore\");",
+            "do{Thread.sleep(1000)}until(activity.getFrontAppPackage()!=\"android\");",
+            "Thread.sleep(1000);",
+            "if(!thanos.windowManager.hasVisibleWindows(from)){su.exe(\"kill -STOP `pgrep -f \"+ from +\"`\")};"
+        ]
+    }
+]
+
+[
+    {
+        "name": "解冻进程",
+        "description": "当应用进入前台时解冻进程",
+        "priority": 1,
+        "condition": "frontPkgChanged && globalVarOf$blackApps.contains(to)",
+        "actions": [
+            "su.exe(\"kill -CONT `pgrep -f \"+ to + \"`\");",
+            "su.exe(\"appops set \" +to + \" WAKE_LOCK default\");"
+        ]
+    }
+]

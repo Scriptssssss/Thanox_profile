@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Enable QQMSG(debug)",
+    "description": "QQ进入前台，启用QQ自带消息组件",
+    "priority": 2,
+    "condition": "frontPkgChanged == true && to == \"com.tencent.mobileqq\"",
+    "actions": [
+      "ui.showShortToast(\"检测到进入QQ 执行:启用QQ自带消息组件\");",
+      "ui.showShortToast(\"\" + su.exe(\"pm enable com.tencent.mobileqq/com.tencent.mobileqq.msf.service.MsfService\"));",
+      "ui.showShortToast(\"\" + su.exe(\"pm enable com.tencent.mobileqq/com.tencent.mobileqq.msf.service.MSFAliveJobService\"));"
+    ]
+  },
+  {
+    "name": "Disable QQMSG(debug)",
+    "description": "QQ被移除后台，禁用QQ自带消息组件",
+    "priority": 2,
+    "condition": "taskRemoved == true && pkgName == \"com.tencent.mobileqq\" ",
+    "actions": [
+      "ui.showShortToast(\"检测到移除QQ后台 执行:禁用QQ自带消息组件\");",
+      "ui.showShortToast(\"\" + su.exe(\"pm disable com.tencent.mobileqq/com.tencent.mobileqq.msf.service.MsfService\"));",
+      "ui.showShortToast(\"\" + su.exe(\"pm disable com.tencent.mobileqq/com.tencent.mobileqq.msf.service.MSFAliveJobService\"));"
+    ]
+  }
+]

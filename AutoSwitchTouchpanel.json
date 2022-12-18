@@ -1,0 +1,11 @@
+[
+{
+"name": "AutoSwitchTouchpanel",
+"description": "打开需要软件时修改性能模式，杀软件后关闭",
+"priority": 1,
+"condition": "if (frontPkgChanged == true && globalVarOf$game.contains(to)) {ui.showShortToast(\"enter game\");ui.showShortToast(\"\" + su.exe(\"echo 1 > /proc/touchpanel/game_switch_enable\"));} else if (pkgKilled == true && globalVarOf$game.contains(pkgName)) { ui.showShortToast(\"exit game\");ui.showShortToast(\"\" + su.exe(\"echo 0 > /proc/touchpanel/game_switch_enable\"));}",
+"actions":[
+""
+]
+}
+]

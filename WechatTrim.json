@@ -1,0 +1,9 @@
+[{
+"name": "微信优化",
+"description": "微信移除任务被时结束主进程和push以外的进程微信进程",
+"priority": 2,
+"condition": "taskRemoved == true && pkgName == \"com.tencent.mm\"",
+"actions": [
+"sh.exe(\"ps -ef|grep com.tencent.mm:|grep -v push|grep -v grep|awk '{print $2}'|xargs kill -9\")"
+]
+}]

@@ -1,0 +1,11 @@
+[
+{
+"name": "AutoSwitchBluetooth",
+"description": "打开需要软件时开启蓝牙，杀软件后关闭",
+"priority": 1,
+"condition": "if (frontPkgChanged == true && globalVarOf$bluetooth.contains(to)) {ui.showShortToast(\"EnableLocation......\" +(hw.enableBT() ? \"Succeeded\" : \"Failed\"));} else if (pkgKilled == true && globalVarOf$bluetooth.contains(pkgName)) { ui.showShortToast(\"DisableLocation......\"+(hw.disableBT() ? \"Succeeded\" : \"Failed\"));}",
+"actions":[
+""
+]
+}
+]

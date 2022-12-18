@@ -1,0 +1,22 @@
+[
+  {
+    "name": "wifiadb enable",
+    "description": "enter wifiadbApps,enable wifiadb",
+    "priority": 2,
+    "condition": "frontPkgChanged == true && globalVarOf$wifiadbApps.contains(to)",
+    "actions": [
+      "ui.showShortToast(\"enter wifiadbApps,enable wifiadb\");",
+      "ui.showShortToast(\"\" + su.exe(\"setprop service.adb.tcp.port 5555&&stop adbd&&start adbd\"));"
+    ]
+  },
+  {
+    "name": "wifiadb disable",
+    "description": "exit wifiadbApps,disable wifiadb",
+    "priority": 2,
+    "condition": "taskRemoved == true && globalVarOf$wifiadbApps.contains(pkgName)",
+    "actions": [
+      "ui.showShortToast(\"exit wifiadbApps,disable wifiadb\");",
+      "ui.showShortToast(\"\" + su.exe(\"stop adbd\"));"
+    ]
+  }
+]

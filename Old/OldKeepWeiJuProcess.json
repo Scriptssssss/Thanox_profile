@@ -1,0 +1,13 @@
+[
+{
+"name": "机型伪装保活",
+"description": "io.ikws4.weiju/io.ikws4.weiju.servers.ApkServer保活",
+"priority": 1,
+"condition": "pkgKilled == true && pkgName == \"io.ikws4.weiju\"",
+"actions":
+[
+"su.exe('am start-foreground-service -n io.ikws4.weiju/io.ikws4.weiju.servers.ApkServer');",
+"ui.showShortToast(\"KEEP io.ikws4.weiju/io.ikws4.weiju.servers.ApkServer\")"
+]
+}
+]

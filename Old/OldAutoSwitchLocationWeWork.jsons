@@ -1,0 +1,22 @@
+[
+  {
+    "name": "DisableLocation",
+    "description": "关闭企业微信时，关闭定位",
+    "priority": 2,
+    "condition": "frontPkgChanged == true && from == \"com.tencent.wework\"",
+    "actions": [
+      "ui.showShortToast(\"DisableLocation......\" + (hw.disableLocation() ? \"Succeed\" : \"Fail\"));"
+    ]
+  }
+]
+[
+  {
+    "name": "EnableLocation",
+    "description": "打开企业微信时，打开定位",
+    "priority": 2,
+    "condition": "frontPkgChanged == true && to == \"com.tencent.wework\"",
+    "actions": [
+      "ui.showShortToast(\"EnableLocation......\" + (hw.enableLocation() ? \"Succeed\" : \"Fail\"));"
+    ]
+  }
+]

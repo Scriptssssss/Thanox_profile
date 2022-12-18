@@ -1,0 +1,26 @@
+[
+{
+"name": "亮屏退出睡眠",
+"description": "亮屏退出深度Doze模式",
+"priority": 1,
+"condition": "screenOn == true",
+"actions":
+[
+"sh.exe(\"dumpsys deviceidle disable all\");",
+"sh.exe(\"dumpsys deviceidle unforce\");" ,
+"sh.exe(\"dumpsys battery reset\");"
+]
+}
+]
+[
+    {
+    "name": "息屏深度睡眠",
+    "description": "息屏进入深度Doze模式",
+    "priority": 1,
+    "condition": "screenOff == true",
+    "actions": [
+    "sh.exe(\"dumpsys deviceidle enable deep\");",
+    "sh.exe(\"dumpsys deviceidle force-idle deep\");"
+    ]
+    }
+    ]

@@ -1,0 +1,11 @@
+[
+{
+"name": "AutoSwitchArt",
+"description": "打开需要软件时隐藏Art，杀软件后修复inlinehook",
+"priority": 1,
+"condition": "if (frontPkgChanged == true && globalVarOf$HideArtApps.contains(to)) {ui.showShortToast(\"enter HideArtApps,hide art\");ui.showShortToast(\"\" + su.exe(\"resetprop --delete dalvik.vm.dex2oat-flags\"));} else if (frontPkgChanged == true && globalVarOf$HideArtApps.contains(from)) { ui.showShortToast(\"exit HideArtApps,fix inline hook\");ui.showShortToast(\"\" + su.exe(\"setprop dalvik.vm.dex2oat-flags --inline-max-code-units=0\"));}",
+"actions":[
+""
+]
+}
+]

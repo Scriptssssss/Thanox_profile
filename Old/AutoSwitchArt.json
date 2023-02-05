@@ -1,0 +1,11 @@
+[
+    {
+        "name": "AutoSwitchArt",
+        "description": "打开需要软件时隐藏Art，杀软件后修复inlinehook",
+        "priority": 1,
+        "condition": "if (frontPkgChanged == true)if globalVarOf$HookedApps.contains(from)) {ui.showShortToast(\"exit HookedApps,hide art\");ui.showShortToast(\"\" + su.exe(\"resetprop --delete dalvik.vm.dex2oat-flags\"));} else{ ui.showShortToast(\"exit NoHookedApps,fix inline hook\");ui.showShortToast(\"\" + su.exe(\"resetprop --delete dalvik.vm.dex2oat-flags;resetprop dalvik.vm.dex2oat-flags --inline-max-code-units=0\"));}",
+        "actions": [
+            ""
+        ]
+    }
+]

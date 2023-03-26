@@ -1,22 +1,21 @@
 [
+
 {
+
 "name": "AutoSwitchBluetooth",
+
 "description": "打开需要软件时开启蓝牙，杀软件后关闭",
+
 "priority": 1,
-"condition": "if (btStateOn == false && frontPkgChanged == true && globalVarOf$bluetooth.contains(to)) {ui.showShortToast(\"EnableBluetooth......\" +(hw.enableBT() ? \"Succeeded\" : \"Failed\"));} else if (btConnectionStateConnected == false && pkgKilled == true && globalVarOf$bluetooth.contains(pkgName)) { ui.showShortToast(\"DisableBluetooth......\"+(hw.disableBT() ? \"Succeeded\" : \"Failed\"));}",
-"actions":[
-""
-]
-}
-]
-[
-{
-"name": "AutoSwitchBluetooth",
-"description": "打开需要软件时开启蓝牙，杀软件后关闭",
-"priority": 1,
+
 "condition": "if (btStateOff == true && frontPkgChanged == true && globalVarOf$bluetooth.contains(to)) {ui.showShortToast(\"EnableBluetooth......\" +(hw.enableBT() ? \"Succeeded\" : \"Failed\"));} else if (btConnectionStateDisconnected == true && pkgKilled == true && globalVarOf$bluetooth.contains(pkgName)) { ui.showShortToast(\"DisableBluetooth......\"+(hw.disableBT() ? \"Succeeded\" : \"Failed\"));}",
+
 "actions":[
+
 ""
+
 ]
+
 }
+
 ]

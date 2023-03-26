@@ -1,0 +1,61 @@
+[
+
+{
+
+"name": "自动开关GPS进阶版",
+
+"description": "变量组件或变量应用自动开GPS,直到最近任务没有需要gps的应用(小程序或固定组件)才会关闭。",
+
+"priority": 1,
+
+"condition": "int c = 0 ;int i = 0 ;int qtime = 0 ;if(activityResumed == true){for(act : globalVarOf$GPSact){if(act == componentNameAsString){i++ ;} ;} ;} ;if((frontPkgChanged == true && globalVarOf$GPSapp.contains(to)) || i!=0 ;){ui.showShortToast((hw.enableLocation() ? \"GPS打开成功\" : \"GPS打开失败\")) ;}else if(pkgKilled == true || activityResumed == true){foreach (pkn : globalVarOf$GPSapp){if(task.hasTaskFromPackage(pkn) == true) {c++ ;break ;} ;}if(c != 0){ ;}else{hw.disableLocation() ;} ;}}",
+
+"actions": [
+
+""
+
+]
+
+}
+
+]
+
+全局变量GPSapp填包名
+
+[
+
+"com.miui.weather2",
+
+"com.autonavi.minimap"
+
+]
+
+全局变量GPSact填组件名
+
+[
+
+"com.tencent.mm/com.tencent.mm.plugin.appbrand.ui.AppBrandUI",
+
+"com.tencent.mm/com.tencent.mm.plugin.appbrand.ui.AppBrandUI1",
+
+"com.tencent.mm/com.tencent.mm.plugin.appbrand.ui.AppBrandUI2",
+
+"com.tencent.mm/com.tencent.mm.plugin.appbrand.ui.AppBrandUI3",
+
+"com.tencent.mm/com.tencent.mm.plugin.appbrand.ui.AppBrandUI4",
+
+"com.tencent.mm/com.tencent.mm.plugin.appbrand.ui.AppBrandUI5",
+
+"com.tencent.mm/com.tencent.mm.plugin.appbrand.ui.AppBrandUI6",
+
+"com.tencent.mm/com.tencent.mm.plugin.location_soso.SoSoProxyUI",
+
+"com.tencent.mm/com.tencent.mm.plugin.nearlife.ui.CheckInLifeUI",
+
+"com.tencent.mm/com.tencent.mm.plugin.webview.ui.tools.WebviewMpUI",
+
+"com.tencent.mm/com.tencent.mm.plugin.webview.ui.tools.WebViewUI",
+
+"com.tencent.mm/com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI"
+
+] 

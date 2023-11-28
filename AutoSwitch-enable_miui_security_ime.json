@@ -1,0 +1,11 @@
+[
+  {
+  "name": "AutoSwitch-enable_miui_security_ime",
+  "description": "打开需要软件时修改enable_miui_security_ime，退出软件后切换回来(miui特供)",
+  "priority": 1,
+  "condition": "if(frontPkgChanged == true){if (globalVarOf$TheAppDontNeed_miui_security_ime.contains(to)) {su.exe(\"settings put secure enable_miui_security_ime 0\"));} else if (globalVarOf$TheAppDontNeed_miui_security_ime.contains(from)) {su.exe(\"settings put secure enable_miui_security_ime 1\"));}}",
+  "actions":[
+  ""
+  ]
+  }
+  ]

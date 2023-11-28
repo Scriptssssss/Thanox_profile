@@ -1,6 +1,6 @@
 [
   {
-    "name": "Auto continue",
+    "name": "Auto-continue",
     "description": "解除墓碑",
     "priority": 1,
     "condition": "frontPkgChanged == true && globalVarOf$pause.contains(to)",
@@ -13,7 +13,7 @@
 
 [
   {
-    "name": "Auto pause",
+    "name": "Auto-pause",
     "description": "自动墓碑",
     "priority": 2,
     "condition": "frontPkgChanged == true && globalVarOf$pause.contains(from)",

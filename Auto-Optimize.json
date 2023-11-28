@@ -1,6 +1,6 @@
 [
   {
-    "name": "AutoOptimize",
+    "name": "Auto-Optimize",
     "description": "应用安装时，自动以everything模式优化",
     "priority": 2,
     "condition": "pkgUpdated == true || pkgAdded == true",

@@ -1,13 +1,12 @@
 [
-{
-"name": "QQ推送保活",
-"description": "com.tencent.mobileqq/com.huawei.hms.support.api.push.service.HmsMsgService保活",
-"priority": 1,
-"condition": "pkgKilled == true && pkgName == \"com.tencent.mobileqq\"",
-"actions":
-[
-"su.exe('am start-foreground-service -n com.tencent.mobileqq/com.huawei.hms.support.api.push.service.HmsMsgService');",
-"ui.showShortToast(\"KEEP com.tencent.mobileqq/com.huawei.hms.support.api.push.service.HmsMsgService\")"
-]
-}
+  {
+    "name": "QQ推送保活",
+    "description": "com.tencent.mobileqq/com.huawei.hms.support.api.push.service.HmsMsgService保活",
+    "priority": 1,
+    "condition": "pkgKilled == true && pkgName == \"com.tencent.mobileqq\"",
+    "actions": [
+      "su.exe('am start-foreground-service -n com.tencent.mobileqq/com.huawei.hms.support.api.push.service.HmsMsgService');",
+      "ui.showShortToast(\"KEEP com.tencent.mobileqq/com.huawei.hms.support.api.push.service.HmsMsgService\")"
+    ]
+  }
 ]

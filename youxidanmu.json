@@ -1,11 +1,11 @@
-[{
-
-"name": "游戏弹幕通知",
-"description": "在指定app页面收到通知，以弹幕形式播放",
-"delay": "0",
-
-"condition": "if (notificationAdded && globalVarOf$youxidanmu.contains(activity.getFrontAppPackage())) { ui.showDanmu(\"app://\" + pkgName, thanos.pkgManager.getAppInfo(pkgName).appLabel + \" \" + notificationTitle + \"\n\" + notificationContent); }",
-
-"actions": [""]
-
-}]
+[
+  {
+    "name": "游戏弹幕通知",
+    "description": "在指定app页面收到通知，以弹幕形式播放",
+    "delay": "0",
+    "condition": "if (notificationAdded && globalVarOf$youxidanmu.contains(activity.getFrontAppPackage())) { ui.showDanmu(\"app://\" + pkgName, thanos.pkgManager.getAppInfo(pkgName).appLabel + \" \" + notificationTitle + \"\n\" + notificationContent); }",
+    "actions": [
+      ""
+    ]
+  }
+]

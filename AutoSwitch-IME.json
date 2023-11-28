@@ -1,0 +1,11 @@
+[
+  {
+    "name": "AutoSwitchIME",
+    "description": "打开需要软件时修改IME，杀软件后切换回来(ImeService需要自己修改)",
+    "priority": 1,
+    "condition": "if(frontPkgChanged == true){if (globalVarOf$Terminals.contains(to)) {ui.showShortToast(\"enter Terminals,AutoSwitchIME\");ui.showShortToast(\"\" + su.exe(\"ime set org.pocketworkstation.pckeyboard/.LatinIME\"));} else if (globalVarOf$Terminals.contains(from)) { ui.showShortToast(\"exit Terminals,AutoSwitchIME\");ui.showShortToast(\"\" + su.exe(\"ime set com.baidu.input_mi/.ImeService\"));}}",
+    "actions": [
+      ""
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "AutoSwitchNFC",
+    "description": "打开需要软件时开启nfc，杀软件后关闭",
+    "priority": 1,
+    "condition": "if (frontPkgChanged == true && globalVarOf$nfc.contains(to)) {ui.showShortToast(\"EnableNfc......\" + (hw.enableNfc() ? \"Succeeded\" : \"Failed\"));} else if (pkgKilled == true && globalVarOf$nfc.contains(pkgName)) {ui.showShortToast(\"DisableNfc......\" + (hw.disableNfc() ? \"Succeeded\" : \"Failed\"));}",
+    "actions": [
+      ""
+    ]
+  }
+]

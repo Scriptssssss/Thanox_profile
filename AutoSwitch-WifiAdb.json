@@ -1,0 +1,11 @@
+[
+  {
+    "name": "AutoSwitchWifiAdb",
+    "description": "打开需要软件时开启wifiadb，杀软件后关闭",
+    "priority": 1,
+    "condition": "if (frontPkgChanged == true && globalVarOf$wifiadbApps.contains(to)) {ui.showShortToast(\"enter wifiadbApps,enable wifiadb\");ui.showShortToast(\"\" + su.exe(\"setprop service.adb.tcp.port 5555&&stop adbd&&start adbd\"));} else if (pkgKilled == true && globalVarOf$wifiadbApps.contains(pkgName)) { ui.showShortToast(\"exit wifiadbApps,disable wifiadb\");ui.showShortToast(\"\" + su.exe(\"stop adbd\"));}",
+    "actions": [
+      ""
+    ]
+  }
+]

@@ -1,14 +1,12 @@
 [
-{
-"name": "QQ保活",
-"description": "QQ被杀保活",
-"priority": 1,
-"condition": "pkgKilled == true && (pkgName == \"com.tencent.mobileqq\")",
-"actions":
-[
-"su.exe('am start-foreground-service -n com.tencent.mobileqq/com.tencent.mobileqq.msf.service.MsfService');",
-
-"ui.showShortToast(\"[已启动]\")"
-]
-}
+  {
+    "name": "QQ保活",
+    "description": "QQ被杀保活",
+    "priority": 1,
+    "condition": "pkgKilled == true && (pkgName == \"com.tencent.mobileqq\")",
+    "actions": [
+      "su.exe('am start-foreground-service -n com.tencent.mobileqq/com.tencent.mobileqq.msf.service.MsfService');",
+      "ui.showShortToast(\"[已启动]\")"
+    ]
+  }
 ]

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "AutoSwitchConfig",
+    "description": "打开需要软件时修改marketname，杀软件后关闭",
+    "priority": 1,
+    "condition": "if (frontPkgChanged == true && globalVarOf$miuiApps.contains(to)) {ui.showShortToast(\"enter miuiApps,set marketname\");ui.showShortToast(\"\" + su.exe(\"resetprop ro.product.marketname MIX4\"));} else if (pkgKilled == true && globalVarOf$miuiApps.contains(pkgName)) { ui.showShortToast(\"exit miuiApps,remove marketname\");ui.showShortToast(\"\" + su.exe(\"resetprop --delete ro.product.marketname\"));}",
+    "actions": [
+      ""
+    ]
+  }
+]

@@ -1,14 +1,13 @@
 [
-{
-"name": "Tim保活",
-"description": "Tim被杀保活",
-"priority": 1,
-"condition": "pkgKilled == true && (pkgName == \"com.tencent.tim\")",
-"actions":
-[
-"su.exe('am start-foreground-service -n com.tencent.tim/com.tencent.mobileqq.msf.service.MsfService');",
-"su.exe('am start-foreground-service -n com.tencent.tim');",
-"ui.showShortToast(\"Tim[已启动]\")"
-]
-}
+  {
+    "name": "Tim保活",
+    "description": "Tim被杀保活",
+    "priority": 1,
+    "condition": "pkgKilled == true && (pkgName == \"com.tencent.tim\")",
+    "actions": [
+      "su.exe('am start-foreground-service -n com.tencent.tim/com.tencent.mobileqq.msf.service.MsfService');",
+      "su.exe('am start-foreground-service -n com.tencent.tim');",
+      "ui.showShortToast(\"Tim[已启动]\")"
+    ]
+  }
 ]
